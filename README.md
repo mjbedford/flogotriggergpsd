@@ -1,0 +1,1 @@
+# flogo-trigger-gpsd
