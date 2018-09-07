@@ -1,0 +1,36 @@
+{
+  "name": "gpsd",
+  "version": "0.0.1",
+  "type": "flogo:trigger",
+  "description": "start on gps event",
+  "author": "Your Name <mbedford@tibco.com>",
+  "settings":[
+    {
+      "name": "interval",
+      "type": "int",
+      "value": "1"
+    }
+  ],
+  "output": [
+    {
+      "name": "lat",
+      "type": "string"
+    },
+    {
+      "name": "lng",
+      "type": "string"
+    },
+    {
+      "name": "dateTime",
+      "type": "string"
+    }
+  ],
+  "handler": {
+    "settings": [
+      {
+        "name": "handler_setting",
+        "type": "string"
+      }
+    ]
+  }
+}
