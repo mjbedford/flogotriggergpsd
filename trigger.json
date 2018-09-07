@@ -2,6 +2,8 @@
   "name": "gpsd",
   "version": "0.0.1",
   "type": "flogo:trigger",
+  "ref": "github.com/stratoberry/go-gpsd",
+  "ref": "github.com/TIBCOSoftware/flogo-lib/logger",
   "description": "start on gps event",
   "author": "Your Name <mbedford@tibco.com>",
   "settings":[
