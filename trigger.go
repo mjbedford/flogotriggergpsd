@@ -3,11 +3,10 @@ package gpsd
 import (
 	"github.com/TIBCOSoftware/flogo-lib/core/trigger"
 	"github.com/stratoberry/go-gpsd"
-	"github.com/TIBCOSoftware/flogo-lib/logger"
 )
 
 // log is the default package logger
-var log = logger.GetLogger("trigger-flogo-gpsd")
+//var log = logger.GetLogger("trigger-flogo-gpsd")
 
 // MyTriggerFactory My Trigger factory
 type MyTriggerFactory struct{
@@ -42,19 +41,19 @@ func (t *MyTrigger) Metadata() *trigger.Metadata {
 
 // Start implements trigger.Trigger.Start
 func (t *MyTrigger) Start() error {
-	log.Debug("Trigger.Start")
+//	log.Debug("Trigger.Start")
 	gps, err := gpsd.Dial("localhost:2947")
 	if err != nil{
 
 		tpvFilter := func(r interface{}) {
-		report := r.(*gpsd.TPVReport)
-		log.Debug("Location updated", report.Lat, report.Lon)
+//		report := r.(*gpsd.TPVReport)
+//		log.Debug("Location updated", report.Lat, report.Lon)
 		}
 
 		gps.AddFilter("TPV", tpvFilter)
 
 	} else {
-	log.Debug(err)
+//	log.Debug(err)
 	}
 // start the trigger
 	return nil
