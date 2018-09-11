@@ -2,7 +2,7 @@
   "name": "flogotriggergpsd",
   "version": "0.0.1",
   "type": "flogo:trigger",
-  "ref": "github.com/mjbedford/flogo-trigger-gpsd",
+  "ref": "github.com/mjbedford/flogotriggergpsd",
   "description": "start on gps event",
   "author": "Your Name <mbedford@tibco.com>",
   "settings":[
