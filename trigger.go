@@ -42,7 +42,7 @@ func (t *MyTrigger) Metadata() *trigger.Metadata {
 
 // Start implements trigger.Trigger.Start
 func (t *MyTrigger) Start() error {
-	log.Debug("Trigger.Start")
+	log.Info("Trigger.Start")
 	gps, err := gpsd.Dial("localhost:2947")
 	if err != nil{
 		log.Debug("Connected to gpsd")
@@ -54,7 +54,7 @@ func (t *MyTrigger) Start() error {
 		gps.AddFilter("TPV", tpvFilter)
 
 	} else {
-	log.Debug(err)
+	log.Error(err)
 	}
 // start the trigger
 	return nil
