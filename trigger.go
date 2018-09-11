@@ -45,10 +45,10 @@ func (t *MyTrigger) Start() error {
 	log.Debug("Trigger.Start")
 	gps, err := gpsd.Dial("localhost:2947")
 	if err != nil{
-
+		log.Debug("Connected to gpsd")
 		tpvFilter := func(r interface{}) {
-		report := r.(*gpsd.TPVReport)
-		log.Debug("Location updated", report.Lat, report.Lon)
+		//report := r.(*gpsd.TPVReport)
+		//log.Debug("Location updated", report.Lat, report.Lon)
 		}
 
 		gps.AddFilter("TPV", tpvFilter)
