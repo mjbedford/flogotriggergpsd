@@ -10,6 +10,11 @@
       "name": "interval",
       "type": "int",
       "value": "1"
+    },
+    {
+      "name": "filter",
+      "type": "string",
+      "value": "TPV"
     }
   ],
   "output": [
