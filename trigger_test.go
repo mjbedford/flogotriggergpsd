@@ -1,4 +1,4 @@
-package gpsd
+package flogotriggergpsd
 
 import (
 	"io/ioutil"
