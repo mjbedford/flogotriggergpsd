@@ -1,1 +1,1 @@
-# flogo-trigger-gpsd
+# flogotriggergpsd
