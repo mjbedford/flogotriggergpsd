@@ -1,4 +1,4 @@
-package gpsd
+package flogo-trigger-gpsd
 
 import (
 	"github.com/TIBCOSoftware/flogo-lib/core/trigger"
