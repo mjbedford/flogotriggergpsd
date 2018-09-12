@@ -43,6 +43,8 @@ func (t *MyTrigger) Metadata() *trigger.Metadata {
 // Start implements trigger.Trigger.Start
 func (t *MyTrigger) Start() error {
 	log.Info("Trigger.Start")
+	filterName := context.GetInput("filter").(string)
+	log.Info("Filter : " + filterName)
 	gps, err := gpsd.Dial("localhost:2947")
 	log.Info("After Dial")
 	if err != nil{
