@@ -49,6 +49,18 @@ func (t *MyTrigger) Start() error {
 	log.Info("Filter : " + filterName)
 	if gps, err := gpsd.Dial(gpsd.DefaultAddress); err != nil {
 		log.Error(fmt.Sprintf("Failed to connect to GPSD: %s", err))
+	} else {
+		log.Info("Connected to gpsd")
+		if filterName == "TPV"{
+			tpvFilter := func(r interface{}) {
+			report := r.(*gpsd.TPVReport)
+			log.Info("Location updated", report.Lat, report.Lon)
+			}
+
+			gps.AddFilter("TPV", tpvFilter)
+		} else {
+			log.Info("Filter not TPV")
+		}
 	}
 	log.Info("After Dial")
 	/* if err != nil{
@@ -67,7 +79,7 @@ func (t *MyTrigger) Start() error {
 	} else {
 	log.Error(err)
 	log.Info(err) */
-	}
+	//}
 // start the trigger
 	return nil
 }
