@@ -1,6 +1,7 @@
 package flogotriggergpsd
 
 import (
+	"fmt"
 	"github.com/TIBCOSoftware/flogo-lib/core/trigger"
 	"github.com/stratoberry/go-gpsd"
 	"github.com/TIBCOSoftware/flogo-lib/logger"
@@ -46,9 +47,11 @@ func (t *MyTrigger) Start() error {
 	filterName :=t.config.GetSetting("filter")
 	//filterName := context.GetInput("filter").(string)
 	log.Info("Filter : " + filterName)
-	gps, err := gpsd.Dial("localhost:2947")
+	if gps, err := gpsd.Dial(gpsd.DefaultAddress); err != nil {
+		log.Error(fmt.Sprintf("Failed to connect to GPSD: %s", err))
+	}
 	log.Info("After Dial")
-	if err != nil{
+	/* if err != nil{
 		log.Info("Connected to gpsd")
 		if filterName == "TPV"{
 			tpvFilter := func(r interface{}) {
@@ -63,7 +66,7 @@ func (t *MyTrigger) Start() error {
 
 	} else {
 	log.Error(err)
-	log.Info(err)
+	log.Info(err) */
 	}
 // start the trigger
 	return nil
